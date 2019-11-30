@@ -7,8 +7,10 @@ services:
     volumes:
       - ./app:/var/www/html/
       - ./apache_files:/var/log/apache2
+    links:
+      - bdd:bdd 
     ports:
-      - "80:80"
+      - "8080:80"
     depends_on:
       - bdd
   bdd:
